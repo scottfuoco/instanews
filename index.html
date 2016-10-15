@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>INSTANEWS!</title>
 
     <link rel="stylesheet" href="build/css/style.min.css">
 </head>
@@ -11,7 +13,9 @@
 <body>
 
     <header>
-        <img src="build/assets/images/nyt-logo.svg" alt="Instanews Logo" />
+        <div class="logoContainer">
+            <img src="build/assets/images/nyt-logo.svg" alt="Instanews Logo" />
+        </div>
         <form action="#">
             <label for="section-select">Choose a section:</label>
             <select name="select" id="section-select">
@@ -23,10 +27,11 @@
                 <option value="realestate">Realestate</option>
             </select>
         </form>
+        <img class="loading-image" src="build/assets/images/ajax-loader.gif" />
     </header>
 
-    <section>
-        <ul id="new-stories-list"></ul>
+    <section class="content">
+        <ul id="news-stories-list"></ul>
     </section>
 
     <footer>

@@ -4,8 +4,9 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 90vh;
-    
+    height: 90vh;        
+    transition: height 1s linear;
+        
     @include tablet {
         flex-direction: row;
     }
@@ -19,8 +20,10 @@ form {
     text-align: center;
 }
 
-img {
+.logoContainer {
     padding-bottom: 1rem;
+    
+    width: 200px;
 }
 
 label {

@@ -1,0 +1,44 @@
+#news-stories-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    li {
+        width:100%;
+        
+        @include tablet {
+            width: 33.33%;
+        }
+    
+        @include desktop {
+            width: 25%;
+        }
+    }
+
+    .article-abstract {
+        padding: 1rem .5rem;
+        background: rgba(0,0,0,.75);
+        color: $base-font-color;
+        display: none;
+    }
+}
+
+.article-background {
+    display: flex;
+    align-items: flex-end;
+    height:400px;
+    background-position: 50%;
+    background-size: cover;
+}
+
+.loading-image {
+    height: 50px;
+    width: 50px;
+    display: none;
+}
+
+.content {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
