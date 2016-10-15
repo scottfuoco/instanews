@@ -28,9 +28,6 @@ var firstTimeSelecting = true;
     .done(function(data) {        
         var newsStoriesMarkup = '';
         
-        
-        
-        
         var filteredData = data.results.filter(function(value){
           return value.multimedia.length >= 5;
         });
