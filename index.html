@@ -2,23 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>INSTANEWS!</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="build/css/style.min.css">
+	<title>INSTANEWS!</title>
+
+	<link rel="stylesheet" href="build/css/style.min.css">
+
 </head>
 
 <body>
 
-    <header>
-        <div class="logoContainer">
-            <img src="build/assets/images/nyt-logo.svg" alt="Instanews Logo" />
-        </div>
-        <form action="#">
-            <label for="section-select">Choose a section:</label>
-            <select name="select" id="section-select">
+	<header>
+		<div class="logoContainer">
+			<img src="build/assets/images/nyt-logo.svg" alt="Instanews Logo" />
+		</div>
+		<form action="#">
+			<label for="section-select">Choose a section:</label>
+			<select name="select" id="section-select">
                 <option value="sections" selected>Sections...</option> 
                 <option value="sports">Sports</option>
                 <option value="home">Home</option>
@@ -26,19 +27,19 @@
                 <option value="automobiles">Automobiles</option>
                 <option value="realestate">Realestate</option>
             </select>
-        </form>
-        <img class="loading-image" src="build/assets/images/ajax-loader.gif" />
-    </header>
+		</form>
+		<img class="loading-image" src="build/assets/images/ajax-loader.gif" />
+	</header>
 
-    <section class="content">
-        <ul id="news-stories-list"></ul>
-    </section>
+	<section class="content">
+		<ul id="news-stories-list"></ul>
+	</section>
 
-    <footer>
-        <p>&copy Copyright 2016 INSTANEWS
-    </footer>
-    <script src="build/js/jquery-3.1.1.min.js"></script>
-    <script src="build/js/main.min.js"></script>
+	<footer>
+		<p>&copy Copyright 2016 INSTANEWS
+	</footer>
+	<script src="build/js/jquery-3.1.1.min.js"></script>
+	<script src="build/js/main.min.js"></script>
 </body>
 
 </html>
