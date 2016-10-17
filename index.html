@@ -8,13 +8,15 @@
     <title>INSTANEWS!</title>
 
     <link rel="stylesheet" href="build/css/style.min.css">
+    <link rel="stylesheet" href="lib/heapbox/themes/pumpkin/css/pumpkin.css" type="text/css" media="screen" />
+    
 </head>
 
 <body>
 
     <header>
         <div class="logoContainer">
-            <img src="build/assets/images/nyt-logo.svg" alt="Instanews Logo" />
+            <img src="assets/images/nyt-logo.svg" alt="Instanews Logo" />
         </div>
         <form action="#">
             <label for="section-select">Choose a section:</label>
@@ -27,17 +29,19 @@
                 <option value="realestate">Realestate</option>
             </select>
         </form>
-        <img class="loading-image" src="build/assets/images/ajax-loader.gif" />
     </header>
 
     <section class="content">
+        <img class="loading-image" src="assets/images/ajax-loader.gif" />
         <ul id="news-stories-list"></ul>
     </section>
 
     <footer>
-        <p>&copy Copyright 2016 INSTANEWS
+        <p>&copy Copyright 2016 INSTANEWS</p>
     </footer>
-    <script src="build/js/jquery-3.1.1.min.js"></script>
+    
+    <script src="lib/js/jquery-3.1.1.min.js"></script>
+    <script src="lib/heapbox/src/jquery.heapbox-0.9.4.min.js"></script>
     <script src="build/js/main.min.js"></script>
 </body>
 

@@ -1,39 +1,45 @@
 $(function() {
   
 var firstTimeSelecting = true;
- 
-  $('#section-select').on('change', function() {
-    if (firstTimeSelecting) {      
-      var el = $('header'),
-      curHeight = el.height(),
-      autoHeight = el.css('height', 'auto').height();
-      
-      el.height(curHeight);
-      el.height(autoHeight);
-      
+var $newsStoriesList = $('#news-stories-list');
+//var $header = $('header');
+  
+ $('#section-select').heapbox({
+'onChange':function(){
+     
+  if (firstTimeSelecting) {
+      $('header').height('auto');   
+      $('#section-select option[value=sections]').remove();
+      $('#section-select').heapbox('update');
+      $('.logoContainer').width('100px');
+
       firstTimeSelecting = false;
     }
-    var $newsStoriesList = $('#news-stories-list');    
+    
+    $('.loading-image').show();
+
+    $newsStoriesList.find('.article-background').removeClass('article-background-animate');
+    
     var selection = $('#section-select').val();
 
     var url = 'https://api.nytimes.com/svc/topstories/v2/'+selection+'.json';
     url += '?' + $.param({
       'api-key': '193e3d7d6bf949bc9e5d62ae2565e5eb'
     });
-   $('.loading-image').show();
+
     $.ajax({
       url: url,
       method: 'GET',
     })
     .done(function(data) {        
-        var newsStoriesMarkup = '';
-        
+
         var filteredData = data.results.filter(function(value){
           return value.multimedia.length >= 5;
         });
         
         filteredData.splice(12);
         
+        var newsStoriesMarkup = '';
         $.each(filteredData, function ( key, value ) {
             newsStoriesMarkup += '<li>';
             newsStoriesMarkup += '<a href="'+value.url+'">'
@@ -43,6 +49,7 @@ var firstTimeSelecting = true;
         })
 
       $newsStoriesList.html(newsStoriesMarkup);
+      $newsStoriesList.find('.article-background').addClass('article-background-animate');
     })
     .fail(function(err) {
       throw err;
@@ -50,7 +57,9 @@ var firstTimeSelecting = true;
     .always(function(){              
       $('.loading-image').hide();
     })    
-  });
+
+}
+});
   
   $('#news-stories-list').on('mouseenter', 'li', function(){
     $(this).find('.article-abstract').slideDown(1000);
