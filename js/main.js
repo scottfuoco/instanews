@@ -2,23 +2,31 @@ $(function() {
   
 var firstTimeSelecting = true;
 var $newsStoriesList = $('#news-stories-list');
-//var $header = $('header');
+var $header = $('header');
   
  $('#section-select').heapbox({
 'onChange':function(){
-     
+  $('.loading-image').show();
+
   if (firstTimeSelecting) {
-      $('header').height('auto');   
+    $('.logoContainer').width('100px');
+
+      var curHeight = $header.height();
+      var autoHeight = $header.height('auto').height();
+            
+      $header.height(curHeight);
+      $header.height(autoHeight);
+      
+      $header.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
+      function() {
+        $header.height('auto');
+      }); 
+
       $('#section-select option[value=sections]').remove();
       $('#section-select').heapbox('update');
-      $('.logoContainer').width('100px');
-
+      
       firstTimeSelecting = false;
-    }
-    
-    $('.loading-image').show();
-
-    $newsStoriesList.find('.article-background').removeClass('article-background-animate');
+    }    
     
     var selection = $('#section-select').val();
 
@@ -33,6 +41,7 @@ var $newsStoriesList = $('#news-stories-list');
     })
     .done(function(data) {        
 
+      $('.loading-image').hide();
         var filteredData = data.results.filter(function(value){
           return value.multimedia.length >= 5;
         });
@@ -49,23 +58,19 @@ var $newsStoriesList = $('#news-stories-list');
         })
 
       $newsStoriesList.html(newsStoriesMarkup);
-      $newsStoriesList.find('.article-background').addClass('article-background-animate');
     })
     .fail(function(err) {
       throw err;
     })
     .always(function(){              
-      $('.loading-image').hide();
+      
     })    
 
 }
 });
   
-  $('#news-stories-list').on('mouseenter', 'li', function(){
-    $(this).find('.article-abstract').slideDown(1000);
+  $('#news-stories-list').on('mouseenter mouseleave', 'li', function(){
+    $(this).find('.article-abstract').slideToggle(1000);
   });
 
-  $('#news-stories-list').on('mouseleave', 'li', function(){
-    $(this).find('.article-abstract').slideUp(1000);
-  });
 });
