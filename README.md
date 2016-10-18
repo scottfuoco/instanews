@@ -22,7 +22,7 @@ It can be a useful reference for the following:
 # Technologies Used
 * HTML5
 * CSS3 transitions and Flexbox layout
-* SCSS - @mixins, variables, and 
+* SCSS - @mixins, variables, and partials 
 * Javascript libraries jQuery and Heapbox
 
 ---
