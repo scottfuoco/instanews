@@ -1,12 +1,12 @@
 html {
     font-size: $base-font-size;
-    color: #FFF;
+    color: $base-font-color;
     font-family: $default-font-family; 
 }
 
 body {
-    background-color: #000;
-    max-width: 1600px;
+    background-color: $background-color;
+    max-width: $max-container-width;
     margin: 0 auto;
 }
 
