@@ -40,6 +40,3 @@ It can be a useful reference for the following:
    * Posting error messages to the terminal
 
 * Using SCSS to organize styles into more easily maintainable and module files.  Also applying mixins to make media queries more readable and usage of variables to simplify changing base/repeated styles by changing a single value.
- 
-# TODO
-* Add additional comments to style.CSS
