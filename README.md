@@ -1,4 +1,3 @@
-<span style="background-color:black; color: white">
 # New York Times Instanews
 <p align="center">
     <a href="https://scottfuoco.github.io/instanews/">
@@ -79,4 +78,3 @@ It can be a useful reference for the following:
    * Posting error messages to the terminal
 
 * Using SCSS to organize styles into more easily maintainable and module files.  Also applying mixins to make media queries more readable and usage of variables to simplify changing base/repeated styles by changing a single value.
-</span>
