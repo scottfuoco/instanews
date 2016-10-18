@@ -8,6 +8,7 @@ ehthumbs.db
 *[Tt]humbs.db
 *.Trashes
 .cs_files
+.vscode/
 
 # Ignore npm packages
 node_modules/
