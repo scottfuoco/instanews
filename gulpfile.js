@@ -11,7 +11,6 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     browserSync = require('browser-sync').create();
 
-
 var plumberErrorHandler = {
     errorHandler: notify.onError({
         title: 'gulp',
@@ -23,10 +22,10 @@ var plumberErrorHandler = {
 gulp.task('js-build', function () {
     gulp.src('js/*.js')
         .pipe(plumber(plumberErrorHandler))
-        .pipe(sourcemaps.init())
+/*        .pipe(sourcemaps.init())
         .pipe(babel())
-        .pipe(uglify())
-        .pipe(rename({ extname: '.min.js' }))
+        .pipe(uglify())*/
+//        .pipe(rename({ extname: '.min.js' }))
         .pipe(gulp.dest('./build/js'))
 });
 
