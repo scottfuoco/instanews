@@ -22,10 +22,10 @@ var plumberErrorHandler = {
 gulp.task('js-build', function () {
     gulp.src('js/*.js')
         .pipe(plumber(plumberErrorHandler))
-/*        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(babel())
-        .pipe(uglify())*/
-//        .pipe(rename({ extname: '.min.js' }))
+        .pipe(uglify())
+        .pipe(rename({ extname: '.min.js' }))
         .pipe(gulp.dest('./build/js'))
 });
 

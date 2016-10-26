@@ -53,7 +53,7 @@ const $header = $('header');
                                   <div class="article-background" style="background-image:url(${multimedia[4].url})">
                                   <p class="article-abstract">${abstract}
                                   </p></div></a></li>`;
-        };
+        }
       $newsStoriesList.html(newsStoriesMarkup);
     })
     .fail((err) => {
@@ -66,6 +66,6 @@ const $header = $('header');
 });
   
   $('#news-stories-list').on('mouseenter mouseleave', 'li', function(){
-    $(this).find('.article-abstract').slideToggle(1000);
+    $(this).find('.article-abstract').slideToggle(500);
   });
 });
