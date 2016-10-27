@@ -4,7 +4,7 @@
   "description": "instanews is the best news",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "start"
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
+    "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
@@ -37,7 +38,9 @@
     "gulp-sourcemaps": "^2.1.1",
     "gulp-uglify": "^2.0.0",
     "install": "^0.8.1",
-    "npm": "^3.10.8"
+    "npm": "^3.10.8",
+    "resolve-url": "^0.2.1",
+    "url-loader": "^0.5.7"
   },
   "keywords": [
     "news"
